@@ -1,0 +1,40 @@
+<br>
+<img src="/public/avatar/{{usuario.avatar}}" class="img-rounded, size-img-avatar">
+<br>
+Email: {{usuario.email}}
+<br>
+Username: {{usuario.username}}
+<br>
+Cant Likes obtenidos: {{cantLikes}}
+<br>
+Cantidad Comentarios Realizados: {{cantComents}}
+
+<br>
+<a href="/app/imagenes/{{usuario.id}}">ver Imagenes subidas</a>
+<br>
+
+<br>
+Ultimos 5 comentarios
+<br>
+-----------------------
+
+{{#each coments}}
+<br>
+{{datePost}}
+<br>
+
+
+    {{comentario}}
+<br>
+
+<a href="/app/imagen/{{image.name}}">Ir a imagen</a>
+<br>
+
+
+{{/each}}
+-----------------------
+
+
+
+
+

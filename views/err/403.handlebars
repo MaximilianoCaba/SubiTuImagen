@@ -1,0 +1,17 @@
+<h1>ERROR 403</h1>
+<br>
+{{err}}
+<br>
+
+
+{{#if susp}}
+
+    {{#each susp}}
+
+        <h2>USTED SE ENCUENTRA SUSPENDIDO</h2>
+        <h3>Desde:</h3> <h4>{{date}}</h4>
+        <h3>Hasta:</h3> <h4>{{dateSuspension}}</h4>
+        <h3>Motivo:</h3> <h4>{{coment}}</h4>
+    {{/each}}
+
+{{/if}}

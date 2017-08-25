@@ -1,0 +1,57 @@
+<div class="container">
+    <center><h2>Administrator</h2></center>
+    <br>
+    <br>
+    <h4>Panel de control</h4>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Denuncias</th>
+            <th>Administradores</th>
+            <th>Nueva alerta</th>
+            <th>Suspensiones</th>
+            <th>Usuarios</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Cantidad: {{cantReports}}</td>
+            <td>Admins: {{cantAdmins}}
+                <br>
+                Moderadores: {{cantModerators}}
+            </td>
+            <td>Genera alerta global</td>
+            <td>Cantidad: {{cantSuspension}}</td>
+            <td>Cantidad : {{cantUsuarios}}</td>
+        </tr>
+<tr>
+        <td>
+            <form action="/admin/module/reports">
+                <input type="submit" class="btn btn-info" value="Ver"/>
+            </form>
+        </td>
+        <td>
+            <form action="/admin/module/users/super">
+                <input type="submit" class="btn btn-info" value="Ver"/>
+            </form>
+        </td>
+        <td>
+            <form action="/admin/module/global/alert">
+                <input type="submit" class="btn btn-info" value="Generar"/>
+            </form>
+        </td>
+
+        <td>
+            <form action="/admin/module/suspensions">
+                <input type="submit" class="btn btn-info" value="Ver"/>
+            </form>
+        </td>
+        <td>
+            <form action="/admin/module/users">
+                <input type="submit" class="btn btn-info" value="Ver"/>
+            </form>
+        </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

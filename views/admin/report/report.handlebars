@@ -1,0 +1,121 @@
+<center>
+<h1>{{title}}</h1>
+
+
+<a href="/app/imagen/{{imagen.name}}"><img src="/public/imagenes/{{imagen.name}}" class="img-thumbnail , size-img-home" alt="Cinque Terre"></a>
+
+    <br>
+    <div>
+        <form action="/app/imagen/{{imagen.name}}">
+            <input type="submit" class="btn btn-success" value="Ver"/>
+        </form>
+    </div>
+    <div>
+    <form action="/admin/module/imagen/delete/{{imagen.id}}">
+        <input type="submit" class="btn btn-danger" value="ELIMINAR IMAGEN"/>
+    </form>
+        <form action="/admin/module/imagen/reject/{{imagen.id}}">
+            <input type="submit" class="btn btn-warning" value="Alertar Usuario"/>
+        </form>
+    </div>
+
+
+
+    <br>
+    <br>
+    <br>
+</center>
+
+
+
+
+<div class="container">
+    <br>
+    <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Comentarios</th>
+            <th>Imagen</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+
+            {{#each reports}}
+
+                {{#if comentario }}
+                    <tr>
+                    <td>
+
+                        <br>
+                        Usuario: {{user.username}}
+                        <br>
+                        Fecha: {{date}}{{hour}}
+                        <br>
+                        Motivo: {{motive}}
+                        <br>
+                        Aclaracion: {{coment}}
+                        <br>
+                        Comentario: {{comentario.comentario}}
+
+                        <form action="/admin/module/report/delete/coment/{{id}}">
+                            <input type="submit" class="btn btn-danger" value="Eliminar"/>
+                        </form>
+
+
+
+                    </td>
+
+                    <td></td>
+                    </tr>
+
+                {{else}}
+                    <tr>
+                        <td></td>
+
+                        <td>
+                            <br>
+                            Usuario: {{user.username}}
+                            <br>
+                            Fecha: {{date}}{{hour}}
+                            <br>
+                            Motivo: {{motive}}
+                            <br>
+                            Aclaracion: {{coment}}
+
+
+                            <form action="/admin/module/report/delete/{{id}}">
+                                <input type="submit" class="btn btn-danger" value="Eliminar"/>
+                            </form>
+                        </td>
+
+                    </tr>
+                {{/if}}
+
+
+
+            {{/each}}
+
+
+
+
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<center>
+    <form action="/admin/module/reports">
+        <input type="submit" class="btn btn-info" value="Volver"/>
+    </form>
+
+</center>
+
+
+

@@ -1,0 +1,31 @@
+<h1>Elimninar Imagen</h1>
+
+<div>
+    <form action="/admin/module/imagen/delete/{{id}}?_method=DELETE" , class="link" , method="POST">
+
+        <div class="form-group">
+            <label>RAZON</label>
+            <select class="form-control" name="motive">
+                <option value="Categoria Incorrecta">Categoria Incorrecta</option>
+                <option value="Contenido Sexual">Contenido Sexual</option>
+                <option value="Discriminacion">Discriminacion</option>
+                <option value="Otro Motivo">Otro Motivo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Descripcion</label>
+            <input type="text" class="form-control" name="aclaration" placeholder="Especifique la denuncia">
+        </div>
+
+        <label>Fecha de suspension</label>
+        <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="es">
+            <input type="text" class="form-control" name="date" readonly placeholder="Deje en blanco para no emitir una suspension">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-danger" value="Eliminar"/>
+    </form>
+</div>

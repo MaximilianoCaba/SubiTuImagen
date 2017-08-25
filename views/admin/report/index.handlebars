@@ -1,0 +1,29 @@
+<h2>{{mensaje}}</h2>
+
+
+<div class="container">
+    {{#each reports}}
+        <div class=" white border tr large-padding">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/public/imagenes/{{name}}" class="pequeña">
+                </div>
+                <div class="col-md-3">
+                    {{title}}
+                </div>
+                <div class="col-md-1">
+                    <form action="/admin/module/report/{{id}}">
+                        <input type="submit" class="btn btn-success" value="Ver"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+<center>
+    <form action="/admin/module">
+        <input type="submit" class="btn btn-info" value="Volver"/>
+    </form>
+
+</center>

@@ -1,0 +1,21 @@
+<h2 class="page-header">Editar Imagen</h2>
+<img src="/public/imagenes/{{imagen.name}}" class="img-thumbnail , size-img-edit" alt="Cinque Terre">
+
+<form action="/app/imagen/{{imagen.name}}?_method=PUT" , class="link" , method="POST">
+    <div class="form-group">
+        <label>Titulo</label>
+        <input type="text" class="form-control" name="title" placeholder="Titulo" value="{{imagen.title}}">
+    </div>
+    <div class="form-group">
+        <label>Tags</label>
+        <input type="text" class="form-control" name="tags" placeholder="Tags" value="{{tags}}">
+    </div>
+
+    <div class="form-group">
+        <label>Comentario</label>
+        <input type="text" class="form-control" name="comentImagen" value="{{imagen.coment}}">
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Editar"/>
+
+</form>

@@ -1,0 +1,43 @@
+<script>
+    function ConfirmDelete() {
+        var x = confirm("Esta seguro que quiere eliminar esta imagen?");
+        if (x)
+            return true;
+        else
+            return false;
+    }
+</script>
+
+<h1>Mis imagenes</h1>
+
+<div class="container">
+    {{#each imagenes}}
+        <div class=" white border tr large-padding">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/public/imagenes/{{name}}" class="pequeña">
+                </div>
+                <div class="col-md-2">
+                    {{title}}
+                </div>
+                <div class="col-md-2">
+                    <form action="/app/imagen/{{name}}">
+                        <input type="submit" class="btn btn-success" value="Ver"/>
+                    </form>
+                </div>
+                <div class="col-md-2">
+                    <form action="/app/imagen/{{name}}/edit">
+                        <input type="submit" class="btn btn-warning" value="Editar"/>
+                    </form>
+
+                </div>
+                <div class="col-md-2">
+                    <form action="/app/imagen/{{name}}?_method=DELETE" , class="link" , method="POST">
+                        <input type="submit" Onclick="return ConfirmDelete()"class="btn btn-danger" value="Eliminar"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+

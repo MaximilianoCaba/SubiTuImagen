@@ -1,0 +1,30 @@
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/bootstrap-datepicker.js"></script>
+<script src="/public/js/bootstrap-datepicker.es.js"></script>
+
+<h1>Editar Suspension</h1>
+
+{{suspension}}
+
+<div>
+    <form action="/admin/module/suspension/edit/{{suspension.id}}?_method=PUT" , class="link" , method="POST">
+
+        <label>Fecha de suspension</label>
+        <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="es">
+            <input type="text" class="form-control" name="date">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-info" value="Editar"/>
+    </form>
+</div>
+
+<center>
+    <form action="/admin/module/suspensions">
+        <input type="submit" class="btn btn-info" value="Volver"/>
+    </form>
+
+</center>

@@ -1,0 +1,19 @@
+<h2 class="page-header">Editar Contraseña</h2>
+{{#if errors}}
+    <div class="alert alert-danger"> {{msg}}</div>
+{{/if}}
+
+<form method="post" action="/reset/{{user.resetPasswordToken}}" >
+    {{user.resetPasswordToken}}
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" class="form-control" placeholder="Password" name="password">
+    </div>
+
+    <div class="form-group">
+        <label>Confirmar Contraseña</label>
+        <input type="password" class="form-control" placeholder="Password" name="password2">
+    </div>
+
+    <button type="submit" class="btn btn-default">Cambiar</button>
+</form>

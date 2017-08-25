@@ -1,0 +1,17 @@
+
+{{#each imagenes}}
+
+    <center>
+        <h1>{{title}}</h1>
+        <a href="/app/imagen/{{name}}"><img src="/public/imagenes/{{name}}" class="img-thumbnail , size-img-home" alt="Cinque Terre"></a>
+        <br>
+        <a href="/user/perfil/{{creator._id}}">{{creator.username}}</a>
+        <br>
+        <a href="/app/imagen/{{name}}"> Likes {{likes}}</a>  ||
+        <a href="/app/imagen/{{name}}"> Comentarios {{cantComents}} </a>
+    </center>
+
+{{/each}}
+
+
+

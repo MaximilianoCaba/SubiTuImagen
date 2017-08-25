@@ -1,0 +1,68 @@
+<div class="container">
+    <center><h2>Usuarios</h2></center>
+    <br>
+    <br>
+
+    <form method="post" action="/admin/module/users/super?_method=PUT" >
+        <div class="form-group">
+            <label>Email</label> Ingrese el Email del Usuario
+            <input type="text" class="form-control" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label>Rol</label> Seleccione un nuevo Rol
+            <select class="form-control" name="role">
+                <option value="moderator_role">Moderador</option>
+                <option value="admin_role">Administrador</option>
+            </select>
+        </div>
+        <center>
+        <button type="submit" class="btn btn-default" >Agregar</button>
+    </center>
+    </form>
+
+    <br>
+    <br>
+
+
+    <h4>Lista de Admins / Mods</h4>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each users}}
+            <tr>
+                <td>{{username}}</td>
+                <td>{{email}}</td>
+                <td>{{role}}</td>
+                <td>
+                    <form action="/admin/module/user/{{id}}">
+                        <input type="submit" class="btn btn-info" value="Editar"/>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+
+        </tbody>
+    </table>
+<br>
+    <center>
+        <form action="/admin/module">
+            <input type="submit" class="btn btn-info" value="Volver"/>
+        </form>
+
+    </center>
+
+<br>
+
+
+
+
+
+</div>
+

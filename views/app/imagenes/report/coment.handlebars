@@ -1,0 +1,21 @@
+<h2 class="page-header">Reporte</h2>
+
+Recuerde: si usted esta denunciando sin un fundamento valido, puede llegar a obtener consecuencias!
+<form method="post" action="/app/imagen/coment/report/{{comentId}}/{{imagenId}}">
+
+    <div class="form-group">
+        <label>RAZON</label>
+        <select class="form-control" name="motive">
+            <option value="Contenido Sexual">Contenido Sexual</option>
+            <option value="Discriminacion">Discriminacion</option>
+            <option value="Otro Motivo">Otro Motivo</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Descripcion</label> Especifique la denuncia
+        <input type="text" class="form-control" name="coment" placeholder="Comentario Adicional">
+    </div>
+
+    <button type="submit" class="btn btn-default">Enviar</button>
+</form>

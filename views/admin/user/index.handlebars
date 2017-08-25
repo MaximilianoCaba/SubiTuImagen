@@ -1,0 +1,43 @@
+<div class="container">
+    <center><h2>Usuarios</h2></center>
+    <br>
+    <br>
+    <h4>Lista de usuarios</h4>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each users}}
+            <tr>
+                <td>{{username}}</td>
+                <td>{{email}}</td>
+                <td>
+                    <form action="/admin/module/user/{{id}}">
+                        <input type="submit" class="btn btn-info" value="Editar"/>
+                    </form>
+                </td>
+                <td>
+                    <form action="/admin/module/user/{{id}}?_method=DELETE" method="POST">
+                        <input type="submit" class="btn btn-danger" value="ELIMINAR"/>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+
+        </tbody>
+    </table>
+
+</div>
+
+<br>
+<center>
+    <form action="/admin/module">
+        <input type="submit" class="btn btn-info" value="Volver"/>
+    </form>
+
+</center>

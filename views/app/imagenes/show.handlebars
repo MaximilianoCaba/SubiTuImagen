@@ -1,0 +1,97 @@
+<center>
+
+    <h1>Nombre Imagen: {{imagen.title}}</h1>
+    <h1>Categoria: {{imagen.category}}</h1>
+
+    <h1>Usuario: {{useer.username}}</h1>
+    <h1>Avatar: <img height="50" width="50" src="/public/avatar/{{useer.avatar}}" class="main-img">
+    </h1>
+
+    <a href="/public/imagenes/{{imagen.name}}"><img src="/public/imagenes/{{imagen.name}}"
+                                                    class="main-img, size-img-view"></a>
+    <br>
+    <h3>Descripcion</h3>
+    <br>
+    {{imagen.coment}}
+    <br>
+    --------------------------------------
+    <br>
+    Likes: {{imagen.likes}}
+
+    {{#if user}}
+        {{#if userLike}}
+            <form action="/app/imagen/dislike/{{imagen.name}}" method="POST">
+                <input type="submit" class="btn btn-danger" value="Dislike"/>
+            </form>
+        {{else}}
+            <form action="/app/imagen/like/{{imagen.name}}" method="POST">
+                <input type="submit" class="btn btn-success" value="Like"/>
+            </form>
+        {{/if}}
+    {{else}}
+    {{/if}}
+
+    <br>
+
+    {{#ifNotEqual imagen.creator user.id}}
+        <form action="/app/imagen/report/{{imagen.id}}">
+            <input type="submit" class="btn btn-danger" value="REPORTAR"/>
+        </form>
+    {{/ifNotEqual}}
+
+
+    <h3>Comentarios</h3>
+
+    <form method="post" action="/app/add/coment/{{imagen.name}}">
+        <div class="form-group">
+            <label>Agrega Comentario</label>
+            <input type="text" class="form-control" placeholder="Comentario" name="coment">
+        </div>
+        <button type="submit" class="btn btn-default">Enviar</button>
+    </form>
+
+
+    {{#each coment}}
+        -------------------------------------------------------
+
+        <br>
+        {{usernameCreator}} {{datePost}}
+
+
+    {{#ifEqual creator ../user.id}}
+
+        <form action="/app/delet/coment/{{_id}}/{{image._id}}?_method=DELETE" , class="link" , method="POST">
+            <input type="submit" name="noButon" value="x"/>
+        </form>
+
+    {{else}}
+
+        <form action="/app/imagen/coment/report/{{_id}}/{{image._id}}">
+            <input type="submit" class="btn btn-warning" value="R"/>
+        </form>
+
+    {{/ifEqual}}
+
+
+
+        {{#ifEqual "admin_role" ../user.role}}
+
+            <form action="/app/delet/coment/{{_id}}/{{image._id}}?_method=DELETE" , class="link" , method="POST">
+                <input type="submit" name="noButon" value="x"/>
+            </form>
+
+        {{/ifEqual}}
+
+
+        <br>
+        {{comentario}}
+        <br>
+
+
+
+    {{/each}}
+       -------------------------------------------------------
+    <BR>
+
+
+</center>

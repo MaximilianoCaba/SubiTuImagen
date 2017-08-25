@@ -1,0 +1,11 @@
+<h2 class="page-header">Comentar</h2>
+{{#if errors}}
+        <div class="alert alert-danger">{{errors}}</div>
+{{/if}}
+<form method="post" action="/app/add/coment/{{imagen.name}}">
+    <div class="form-group">
+        <label>Agrega Comentario</label>
+        <input type="text" class="form-control" placeholder="Comentario" name="coment">
+    </div>
+    <button type="submit" class="btn btn-default">Enviar</button>
+</form>

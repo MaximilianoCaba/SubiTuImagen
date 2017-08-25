@@ -1,0 +1,23 @@
+<h1>Alertar Usuario</h1>
+
+<div>
+    <form action="/admin/module/imagen/reject/{{imagen.id}}" , class="link" , method="POST">
+
+        <div class="form-group">
+            <label>RAZON</label>
+            <select class="form-control" name="motive">
+                <option value="Categoria Incorrecta">Categoria Incorrecta</option>
+                <option value="Contenido Sexual">Contenido Sexual</option>
+                <option value="Discriminacion">Discriminacion</option>
+                <option value="Otro Motivo">Otro Motivo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Descripcion</label>
+            <input type="text" class="form-control" name="aclaration" placeholder="Especifique la denuncia">
+        </div>
+
+        <input type="submit" class="btn btn-danger" value="Eliminar"/>
+    </form>
+</div>

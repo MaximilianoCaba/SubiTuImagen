@@ -1,0 +1,82 @@
+<table style="width:100%">
+
+
+    <td width="55%">
+        <center>
+            <img src="/public/avatar/{{usuario.avatar}}" class="img-rounded, size-img-avatar">
+            <br>
+            Email: {{usuario.email}} || <a href="/user/edit/email/{{usuario.id}}">Editar Email</a>
+            <br>
+            Username: {{usuario.username}}
+            <br>
+            <a href="/user/edit/password/{{usuario.id}}">Editar Password</a>
+            <br>
+            <a href="/user/edit/avatar/{{usuario.id}}">Editar Avatar</a>
+            <br>
+
+            {{#ifEqual user.facebook.id "null"}}
+
+                <form action="/auth/facebook">
+                    <input type="submit" class="btn btn-success" value="Asociar Facebook"/>
+                </form>
+            {{else}}
+
+                <form action="/user/desvincular/fb/{{user.id}}" , class="link" , method="POST">
+                    <input type="submit" class="btn btn-danger" value="Desvincular Facebook"/>
+                </form>
+            {{/ifEqual}}
+            <br>
+
+            {{#ifEqual user.google.id "null"}}
+
+
+                <form action="/auth/google">
+                    <input type="submit" class="btn btn-success" value="Asociar Google"/>
+                </form>
+            {{else}}
+
+                <form action="/user/desvincular/google/{{user.id}}" , class="link" , method="POST">
+                    <input type="submit" class="btn btn-danger" value="Desvincular Google"/>
+                </form>
+            {{/ifEqual}}
+
+            <br>
+
+
+            {{#ifEqual "admin_role" user.role }}
+
+                <form action="/admin/module">
+                    <input type="submit" class="btn btn-info" value="Administrartor"/>
+                </form>
+
+            {{/ifEqual}}
+            <br>
+
+
+        </center>
+    </td>
+
+    <td width="45%">
+        <center>
+            <h2>Alertas</h2>
+
+            {{#if alerts}}
+                {{#each alerts}}
+                    {{message}}
+                    <br>
+                    {{date}}
+                    {{hour}}
+                    <br>
+                    <form action="/app/imagen/alert/{{id}}?_method=DELETE" , class="link" , method="POST">
+                        <input type="submit" class="btn btn-danger" value="Eliminar"/>
+                    </form>
+                    ------------------------
+                    <br>
+                {{/each}}
+            {{else}}
+                NO HAY ALERTAS EN ESTE MOMENTO
+            {{/if}}
+
+        </center>
+    </td>
+</table>
